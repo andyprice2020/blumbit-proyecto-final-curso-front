@@ -75,10 +75,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "coreui-free-angular-admin-template:build:production"
+              "browserTarget": "coreui-free-angular-admin-template:build:production",
+              "port": 40000
             },
             "development": {
-              "browserTarget": "coreui-free-angular-admin-template:build:development"
+              "browserTarget": "coreui-free-angular-admin-template:build:development",
+              "port": 40000
             }
           },
           "defaultConfiguration": "development"

@@ -11,6 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Import app component
 import { AppComponent } from './app.component';
+import { Page404Component } from './views/pages/page404/page404.component';
+import { Page500Component } from './views/pages/page500/page500.component';
+import { LoginComponent } from './views/pages/login/login.component';
+import { RegisterComponent } from './views/pages/register/register.component';
 
 // Import containers
 import { DefaultFooterComponent, DefaultHeaderComponent, DefaultLayoutComponent } from './containers';
@@ -45,7 +49,13 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS],
+  declarations: [
+    AppComponent,
+    ...APP_CONTAINERS,
+    Page404Component,
+    Page500Component,
+  LoginComponent,
+  RegisterComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
