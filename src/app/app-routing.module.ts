@@ -53,6 +53,7 @@ const routes: Routes = [
       },
     ]
   },
+  { path: 'album', loadChildren: () => import('./views/online-store/album/album.module').then(m => m.AlbumModule) },
   { path: '**', redirectTo: 'Page404Component'}
 ];
 

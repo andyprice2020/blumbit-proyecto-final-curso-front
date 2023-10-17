@@ -1,0 +1,7 @@
+input:invalid ~ .check-ok {
+  display: none;
+}
+
+input:valid ~ .check-ok {
+  display: inline;
+}
