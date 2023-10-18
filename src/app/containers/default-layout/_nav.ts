@@ -11,7 +11,13 @@ export const navItems: INavData[] = [
         name: 'Artist',
         url: '/artist',
         icon: 'cil-notes'
+      },
+      {
+        name: 'Album',
+        url: '/album',
+        icon: 'cil-notes'
       }
+
     ]
   }
 ];

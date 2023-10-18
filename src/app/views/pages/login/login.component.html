@@ -5,7 +5,7 @@
         <c-card-group>
           <c-card class="p-4">
             <c-card-body>
-              <form cForm>
+              <form cForm *ngIf="!isLoggedIn" (ngSubmit)="form.valid && onSubmit()" novalidate>
                 <img src="/assets/images/Logo-Blumbit.jpg" class="img-fluid rounded mx-auto d-block" alt="Logo Blumbit" width="216" height="125">
                 <h1 class="text text-center">Online Store Login</h1>
                 <p class="text text-center">Sign In to your account</p>
@@ -13,25 +13,44 @@
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input autoComplete="username" cFormControl placeholder="Username" />
+                  <input
+                      type="text"
+                      class="form-control"
+                      name="username"
+                      [(ngModel)]="form.username"
+                      required
+                      #username ="ngModel"
+                      cFormControl placeholder="Username" />
                 </c-input-group>
                 <c-input-group class="mb-4">
                   <span cInputGroupText>
                     <svg cIcon name="cilLockLocked"></svg>
                   </span>
                   <input
+                    type = "password"
+                    class="form-control"
+                    name="password"
+                    [(ngModel)]="form.password"
+                    required
                     autoComplete="current-password"
                     cFormControl
                     placeholder="Password"
-                    type="password"
                   />
                 </c-input-group>
                 <c-row>
                   <div class="col-12">
-                    <button cButton class="btn btn-pill btn-dark btn-block">Login</button>
+                    <button cButton class="btn btn-pill btn-dark btn-block" (click)="onSubmit()">Login</button>
+                  </div>
+                  <div class="form-group">
+                    <div *ngIf="form.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+                      Login failed:{{ errorMessage }}
+                    </div>
                   </div>
                 </c-row>
               </form>
+              <div class="alert alert-success" *ngIf="isLoggedIn">
+                Login in as {{ roles }}
+              </div>
             </c-card-body>
           </c-card>
         </c-card-group>

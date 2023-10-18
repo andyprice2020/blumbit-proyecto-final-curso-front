@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
-  apiTokenLoginUrl: 'http://localhost:9000/api/v1/auth/',
-  apiArtistUrl: 'http://localhost:9000/api/v1/artists'
+  apiAuthUrl: 'http://localhost:9000/api/v1/auth/',
+  apiArtistUrl: 'http://localhost:9000/api/v1/artists/',
+  apiTestUrl: 'http://localhost:9000/api/v1/test/'
 };
